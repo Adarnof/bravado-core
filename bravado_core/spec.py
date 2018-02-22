@@ -524,7 +524,7 @@ def build_api_serving_url(spec_dict, origin_url=None, preferred_scheme=None):
             "include {1}".format(origin.scheme, schemes))
 
     netloc = spec_dict.get('host', origin.netloc)
-    path = spec_dict.get('basePath', origin.path)
+    path = spec_dict.get('basePath', '/')
     scheme = pick_a_scheme(spec_dict.get('schemes'))
     return urlunparse((scheme, netloc, path, None, None, None))
 
